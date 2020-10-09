@@ -1,6 +1,7 @@
 import React from 'react';
 import styled,{createGlobalStyle} from 'styled-components';
 import {MaxUseCalc} from './components/ingredients'
+import {MedicineTab} from './components';
 const GlobalStyle=createGlobalStyle`
   *{
     box-sizing:border-box;
@@ -20,15 +21,18 @@ const Main=styled.div`
   padding: 3em;
   display: flex;
   justify-content: center;
+  @media(max-width:768px){
+    padding: 1em;
+  }
 `
 function App() {
   return (
     <>
       <GlobalStyle/>
       <Main>
-        <MaxUseCalc dailyUse={5}/>
+        <MedicineTab/>
       </Main>
-      </>
+    </>
   );
 }
 

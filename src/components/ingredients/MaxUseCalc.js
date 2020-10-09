@@ -10,9 +10,9 @@ const CalcWrapper=styled.div`
   border-radius: 6px;
   padding: 1.25em;
   min-height: 20vh;
-  max-height: 45vh;
+  max-height: 25vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
 `
@@ -21,6 +21,7 @@ const CalcInput=styled.input`
   background-color: #fff;
   border-color: #dbdbdb;
   color: #363636;
+  font-size: 1.1em;
 }
 `
 const Disabled=styled.button`
@@ -28,6 +29,7 @@ const Disabled=styled.button`
   border-color: #dbdbdb;
   color: #7a7a7a;
   box-shadow: none;
+  font-size: 1.1em;
   pointer-events: none;
 `
 const AlignLeft=styled.div`
