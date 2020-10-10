@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {DangerStatus,MaxUseCalc} from './'
 
 const Background=styled.div`
   z-index: 10;
@@ -20,6 +21,8 @@ const Box=styled.div`
   height: 90%;
   width: 80%;
   padding: 1em;
+  overflow-x: hidden;
+  overflow-y: scroll;
   @media(max-width:768px){
     height: 95%;
     width: 90%;
@@ -45,14 +48,71 @@ const DeleteButton=styled.button`
   background-color: transparent;
   &:hover{
     cursor: pointer;
+    color:lightblue;
   }
 `
-function OnClickTab({handleOpenToggle}) {
+const Title=styled.h2`
+  padding: 0;
+  margin: 0;
+  color: #000;
+`
+const SubTitle=styled.h5`
+  padding: 0;
+  margin: 0;
+  color:lightgrey;
+`
+const ApplicationWrapper=styled.div`
+  display: flex;
+  flex-direction: row;
+  min-height: 1em;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0.5em;
+  @media (max-width:768px) {
+    flex-direction: column;
+  }
+`
+const Application=styled.div`
+  background: radial-gradient(circle, rgba(11,106,156,1) 0%, rgba(0,224,255,1) 100%);
+  color: #fff;
+  font-size: 0.75em;
+  border-radius: 6px;
+  margin:0.2em ;
+  padding: 0.34em;
+  text-decoration: underline;
+  &::before{
+    content: "#";
+  }
+`
+const CalcWrapper=styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  width: 100%;
+  padding: 1em;
+  margin: 0.5em;
+  @media (max-width:768px) {
+    flex-direction: column;
+  }
+`
+function OnClickTab({handleOpenToggle,data}) {
   return(
     <>
       <Background>
         <Box>
           <CloseButtonWrapper><DeleteButton onClick={handleOpenToggle}>X</DeleteButton></CloseButtonWrapper>
+          <Title>{data.name_pol}</Title>
+          <SubTitle>{data.name_lat}</SubTitle>
+          <p>{data.description}</p>
+          <p>Podgrupa: {data.sub_group}</p>
+          <ApplicationWrapper>
+            {data.application.split(',').map(app=><Application key={app}>{app}</Application>)}
+          </ApplicationWrapper>
+          <CalcWrapper>
+            <MaxUseCalc dosage={data.dosage}/>
+            <DangerStatus importance={3}/>
+          </CalcWrapper>
         </Box>
       </Background>
     </>

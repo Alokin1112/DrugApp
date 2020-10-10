@@ -5,16 +5,19 @@ const CalcWrapper=styled.div`
   box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
   background-color: #fff;
   color: #4a4a4a;
-  min-width: 40%;
-  max-width: 60%;
+  width:50%;
+  margin:0.5em;
   border-radius: 6px;
   padding: 1.25em;
   min-height: 20vh;
-  max-height: 25vh;
+  max-height: 30vh;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
+  @media (max-width:768px) {
+    width:100%;
+  }
 `
 const CalcInput=styled.input`
   width: 70%;
@@ -50,7 +53,7 @@ const Title=styled.h3`
   padding: 0;
   font-size: 0.75em;
 `
-function MaxUseCalc({dailyUse}){
+function MaxUseCalc({dosage}){
 
   const[weight,setWeight]=useState("");
   const handleChange=(e)=>{
@@ -59,12 +62,12 @@ function MaxUseCalc({dailyUse}){
   }
   return(
     <CalcWrapper>
-      <Title>Dzienne zapotrzebowanie</Title>
+      <Title>Dzienne spożycie</Title>
       <AlignLeft>
         <CalcInput type="number" min="1" max="660" placeholder="Wpisz Swoją Wagę" value={weight} onChange={handleChange}/>
         <Disabled disabled>Kg</Disabled>
       </AlignLeft>
-      {weight*dailyUse>0?<Daily>{weight*dailyUse} mg</Daily>:null}
+      {weight*dosage>0?<Daily>{weight*dosage} mg</Daily>:null}
 
     </CalcWrapper>
   );
