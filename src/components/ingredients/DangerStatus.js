@@ -25,7 +25,7 @@ function DangerStatus({importance}) {
     const content=()=>(<>ss</>)
     return(
       <>
-        {importance==0?<YellowDanger>{content()}</YellowDanger>:importance==1?<RedDanger>{content()}</RedDanger>:<BlackDanger>{content}</BlackDanger>}
+        {importance===0?<YellowDanger>{content()}</YellowDanger>:importance===1?<RedDanger>{content()}</RedDanger>:<BlackDanger>{content()}</BlackDanger>}
       </>
     );
 }
