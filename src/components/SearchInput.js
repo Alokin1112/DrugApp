@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import styled from 'styled-components'
+import {FaSearch} from 'react-icons/fa'
 
 const SearchTerm=styled.input`
   width: 100%;
@@ -24,7 +25,13 @@ const SearchButton=styled.button`
   color: #fff;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
-  font-size: 5vh;
+  font-size: 4.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover{
+    background-color: #000;
+  }
 `
 
 function SearchInput({handleSearchSubmit}) {
@@ -37,7 +44,7 @@ function SearchInput({handleSearchSubmit}) {
       <>
 
         <SearchTerm onChange={handleChange} value={search}/>
-        <SearchButton onClick={()=>handleSearchSubmit(search)} type="text">S</SearchButton>
+        <SearchButton onClick={()=>handleSearchSubmit(search)} type="text"><FaSearch/></SearchButton>
       </>
     );
 }

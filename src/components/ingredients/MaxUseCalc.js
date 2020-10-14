@@ -19,21 +19,36 @@ const CalcWrapper=styled.div`
     width:100%;
   }
 `
-const CalcInput=styled.input`
-  width: 70%;
-  background-color: #fff;
-  border-color: #dbdbdb;
-  color: #363636;
-  font-size: 1.1em;
+const Disabled=styled.button`
+width: 4vh;
+height: 4vh;
+border: 1px solid #00B4CC;
+background: #00B4CC;
+text-align: center;
+color: #fff;
+border-radius: 0 5px 5px 0;
+cursor: pointer;
+font-size: 3vh;
+display: flex;
+justify-content: center;
+align-items: center;
+&:hover{
+  cursor:default;
 }
 `
-const Disabled=styled.button`
-  background-color: #f5f5f5;
-  border-color: #dbdbdb;
-  color: #7a7a7a;
-  box-shadow: none;
-  font-size: 1.1em;
-  pointer-events: none;
+const CalcInput=styled.input`
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 0.5vh;
+  height: 4vh;
+  font-size: 2.5vh;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #000;
+  &:focus{
+    color: #00B4CC;
+  }
 `
 const AlignLeft=styled.div`
   display: flex;
@@ -62,12 +77,13 @@ function MaxUseCalc({dosage}){
   }
   return(
     <CalcWrapper>
-      <Title>Dzienne spożycie</Title>
+
+      {dosage>0?<><Title>Dzienne spożycie</Title>
       <AlignLeft>
-        <CalcInput type="number" min="1" max="660" placeholder="Wpisz Swoją Wagę" value={weight} onChange={handleChange}/>
+        <CalcInput type="number" min="1" max="660" placeholder="Wpisz Swoją Wagę" value={weight} onChange={handleChange} maxlength="4"/>
         <Disabled disabled>Kg</Disabled>
       </AlignLeft>
-      {weight*dosage>0?<Daily>{weight*dosage} mg</Daily>:null}
+      <Daily>Maksymalne dzienne spożycie:{weight*dosage>0?Math.round(weight*dosage*1000)/1000+"mg":null} </Daily></>:<p>Brak Danych</p>}
 
     </CalcWrapper>
   );

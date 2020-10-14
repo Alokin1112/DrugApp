@@ -13,7 +13,7 @@ const Tab=styled.div`
   flex-direction: column;
   height: 25vh;
   width: 20vw;
-  margin: 2em;
+  margin: 1em;
   transition: box-shadow .2s ease-in-out;
   overflow: hidden;
   white-space: nowrap;

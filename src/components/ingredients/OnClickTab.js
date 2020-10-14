@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {DangerStatus,MaxUseCalc} from './'
+import {DRUGS_CORELATIONS,DRUGS_TABLE} from '../DRUGS_INFO';
 
 const Background=styled.div`
   z-index: 10;
@@ -88,12 +89,20 @@ const CalcWrapper=styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row-reverse;
   width: 100%;
   padding: 1em;
   margin: 0.5em;
-  @media (max-width:768px) {
-    flex-direction: column;
+`
+const DangerWrapper=styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 1em;
+  margin: 0.5em;
+  flex-flow:row wrap;
+  @media(max-width:768px){
+    flex-direction:column;
   }
 `
 function OnClickTab({handleOpenToggle,data}) {
@@ -111,10 +120,12 @@ function OnClickTab({handleOpenToggle,data}) {
           </ApplicationWrapper>
           <CalcWrapper>
             <MaxUseCalc dosage={data.dosage}/>
-            <DangerStatus importance={3}/>
           </CalcWrapper>
-        </Box>
-      </Background>
+          <DangerWrapper>
+            {DRUGS_CORELATIONS.filter(cor=>cor.id_primary==data.id||cor.id_secondary==data.id).map(cor=><DangerStatus messege={cor.side_effects} importance={cor.danger_scale} drug={data.id===cor.id_primary?DRUGS_TABLE[cor.id_secondary].name_pol:DRUGS_TABLE[cor.id_primary].name_pol} key={cor.id_interaction}/>)}
+          </DangerWrapper>
+          </Box>
+        </Background>
     </>
   );
 }
