@@ -23,6 +23,10 @@ const Tab=styled.div`
     box-shadow: 0 0.5em 1em -0.125em rgba(25,25,25,.40), 0 0 0 1px rgba(25,25,25,.05);
     color:lightblue;
   }
+  &:focus{
+    outline:none;
+    box-shadow: 0 0.5em 1em -0.125em rgba(26,156,232,.60), 0 0 0 1px rgba(26,156,232,.1);
+  }
   @media (max-width:768px) {
     width: 80vw;
     margin:1em auto;
@@ -51,8 +55,8 @@ function MedicineTab({data}){
   return(
     <>
       {isTabOpen?<OnClickTab handleOpenToggle={handleOpenToggle} data={data}/>:null}
-      <Tab onClick={handleOpenToggle}>
-        <Image src={data.img_link}/>
+      <Tab onClick={handleOpenToggle}  tabIndex="0">
+        <Image src={data.img_link} alt={"zdjęcie "+data.name_pol}/>
         <Title>{data.name_pol}</Title>
         <SubTitle>{data.name_lat}</SubTitle>
       </Tab>

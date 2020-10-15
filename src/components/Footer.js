@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Foot=styled.div`
+const Foot=styled.footer`
   font-family: acumin-pro, system-ui, sans-serif;
   display: flex;
   flex-flow: row wrap;
@@ -56,14 +56,14 @@ const FNav=styled.ul`
     }
   }
 `
-const Nav_ul=styled.ul`
+const NavUl=styled.ul`
   font-size: 16px;
   line-height: 2em;
   & a{
     color: #999999;
   }
 `
-const Nav_ul_extra=styled.ul`
+const NavUlExtra=styled.ul`
   column-count: 1;
   column-gap: 1.25em;
   font-size: 16px;
@@ -101,7 +101,7 @@ function Footer() {
         </li>
         <li>
           <Title>Things used to Create Project</Title>
-          <Nav_ul_extra>
+          <NavUlExtra>
             <li>
               <a href="https://reactjs.org/">React</a>
             </li>
@@ -111,7 +111,7 @@ function Footer() {
             <li>
               <a href="https://react-icons.github.io/react-icons/icons?name=ai">React Icons</a>
             </li>
-          </Nav_ul_extra>
+          </NavUlExtra>
         </li>
         <li>
           <Title>Support</Title>
@@ -137,11 +137,11 @@ function Footer() {
         </li>
         <li>
           <Title>Contact to School</Title>
-          <Nav_ul>
+          <NavUl>
             <li>
               <a href="http://www.lokonopnicka.pl/">Maria Konopnicka High School in Legionowo</a>
             </li>
-          </Nav_ul>
+          </NavUl>
         </li>
       </FNav>
       <Copyrights>

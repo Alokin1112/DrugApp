@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import styled,{createGlobalStyle} from 'styled-components';
-import {MedicineTab,SearchInput,Footer} from './components';
+import {MedicineTab,SearchInput,Footer,Notification} from './components';
 import {DRUGS_TABLE} from './components/DRUGS_INFO';
 const GlobalStyle=createGlobalStyle`
   *{
@@ -15,7 +15,7 @@ const GlobalStyle=createGlobalStyle`
     font-size:1.5rem;
   }
 `;
-const MainWrapper=styled.div`
+const MainWrapper=styled.main`
   overflow: hidden;
   width: 100%;
   display: flex;
@@ -24,7 +24,7 @@ const MainWrapper=styled.div`
   flex-flow:column nowrap;
 `;
 const SearchWrapper=styled.div`
-  margin: 4vh;
+  margin: 2vh auto 3vh;
   width: 65vw;
   height: 15vh;
   display: flex;
@@ -60,6 +60,7 @@ function App() {
     <>
       <GlobalStyle/>
       <MainWrapper>
+        <Notification/>
         <SearchWrapper>
           <SearchInput handleSearchSubmit={handleSearchSubmit}/>
         </SearchWrapper>

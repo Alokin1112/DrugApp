@@ -110,7 +110,7 @@ function OnClickTab({handleOpenToggle,data}) {
     <>
       <Background>
         <Box>
-          <CloseButtonWrapper><DeleteButton onClick={handleOpenToggle}>X</DeleteButton></CloseButtonWrapper>
+          <CloseButtonWrapper><DeleteButton onClick={handleOpenToggle} tabIndex="10">X</DeleteButton></CloseButtonWrapper>
           <Title>{data.name_pol}</Title>
           <SubTitle>{data.name_lat}</SubTitle>
           <p>{data.description}</p>
@@ -122,7 +122,7 @@ function OnClickTab({handleOpenToggle,data}) {
             <MaxUseCalc dosage={data.dosage}/>
           </CalcWrapper>
           <DangerWrapper>
-            {DRUGS_CORELATIONS.filter(cor=>cor.id_primary==data.id||cor.id_secondary==data.id).map(cor=><DangerStatus messege={cor.side_effects} importance={cor.danger_scale} drug={data.id===cor.id_primary?DRUGS_TABLE[cor.id_secondary].name_pol:DRUGS_TABLE[cor.id_primary].name_pol} key={cor.id_interaction}/>)}
+            {DRUGS_CORELATIONS.filter(cor=>cor.id_primary===data.id||cor.id_secondary===data.id).map(cor=><DangerStatus messege={cor.side_effects} importance={cor.danger_scale} drug={data.id===cor.id_primary?DRUGS_TABLE[cor.id_secondary].name_pol:DRUGS_TABLE[cor.id_primary].name_pol} key={cor.id_interaction}/>)}
           </DangerWrapper>
           </Box>
         </Background>
