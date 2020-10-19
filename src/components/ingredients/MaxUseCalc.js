@@ -80,7 +80,7 @@ function MaxUseCalc({dosage}){
 
       {dosage>0?<><Title>Dzienne spożycie</Title>
       <AlignLeft>
-        <CalcInput type="number" min="1" max="660" placeholder="Wpisz Swoją Wagę" value={weight} onChange={handleChange} maxlength="4"/>
+        <CalcInput type="number" min="1" max="660" placeholder="Wpisz Swoją Wagę" value={weight} onChange={handleChange} maxlength="4" aria-label="Write your Weight to check how mcuch medicine you can use"/>
         <Disabled disabled>Kg</Disabled>
       </AlignLeft>
       <Daily>Maksymalne dzienne spożycie:{weight*dosage>0?Math.round(weight*dosage*1000)/1000+"mg":null} </Daily></>:<p>Brak Danych</p>}

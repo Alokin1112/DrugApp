@@ -37,7 +37,7 @@ function Notification(){
     return(
         <>
        {isOpen ? <Note>
-            Uwaga!!Aplikacja nie jest stworzona przez Lekarzy. Skonsultuj się z lekarzem/farmaceutą przed skorzystaniem z leku!
+            Uwaga!!! Aplikacja nie jest stworzona przez Lekarzy. Skonsultuj się z lekarzem/farmaceutą przed skorzystaniem z leku!
             <Close onClick={handleClose}>X</Close>
         </Note>:null}
         </>

@@ -49,12 +49,17 @@ const MedicineWrapper=styled.div`
 `;
 
 function App() {
-  //const[search,setSearch]=useState(""); -usuń jeśli nie potrzebne nadal będzie xd
   const[drugs,setDrugs]=useState(DRUGS_TABLE);
   const handleSearchSubmit=(val)=>{
-    //setSearch(val); -usuń jeśli nie potrzebne nadal będzie xd
-    let re=new RegExp("\w*"+val+"\w*","i");
+    let re=new RegExp("^"+val,"i");
     setDrugs(DRUGS_TABLE.filter(val=>re.test(val.name_pol)));
+  }
+  const handleFilter=(val)=>{
+    let re=new RegExp(val,"i");
+    setDrugs(DRUGS_TABLE.filter(drug=>re.test(drug.application)));
+  }
+  const handleClearSearch=()=>{
+    setDrugs(DRUGS_TABLE);
   }
   return (
     <>
@@ -62,10 +67,10 @@ function App() {
       <MainWrapper>
         <Notification/>
         <SearchWrapper>
-          <SearchInput handleSearchSubmit={handleSearchSubmit}/>
+          <SearchInput handleSearchSubmit={handleSearchSubmit} handleClearSearch={handleClearSearch}/>
         </SearchWrapper>
         <MedicineWrapper>
-          {drugs.map(drug=><MedicineTab data={drug} key={drug.id}/>)}
+          {drugs.map(drug=><MedicineTab data={drug} key={drug.id} handleFilter={handleFilter}/>)}
         </MedicineWrapper>
         <Footer/>
       </MainWrapper>

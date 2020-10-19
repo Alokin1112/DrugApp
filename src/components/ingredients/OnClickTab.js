@@ -73,7 +73,7 @@ const ApplicationWrapper=styled.div`
     flex-direction: column;
   }
 `
-const Application=styled.div`
+const Application=styled.a`
   background: radial-gradient(circle, rgba(11,106,156,1) 0%, rgba(0,224,255,1) 100%);
   color: #fff;
   font-size: 0.75em;
@@ -105,7 +105,11 @@ const DangerWrapper=styled.div`
     flex-direction:column;
   }
 `
-function OnClickTab({handleOpenToggle,data}) {
+function OnClickTab({handleOpenToggle,data,handleFilter}) {
+  const Filtring=(val)=>{
+    handleOpenToggle();
+    handleFilter(val);
+  }
   return(
     <>
       <Background>
@@ -116,7 +120,7 @@ function OnClickTab({handleOpenToggle,data}) {
           <p>{data.description}</p>
           <p>Podgrupa: {data.sub_group}</p>
           <ApplicationWrapper>
-            {data.application.split(',').map(app=><Application key={app}>{app}</Application>)}
+            {data.application.split(',').map(app=><Application href="#"key={app} onClick={()=>Filtring(app)}>{app}</Application>)}
           </ApplicationWrapper>
           <CalcWrapper>
             <MaxUseCalc dosage={data.dosage}/>

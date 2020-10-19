@@ -2,8 +2,8 @@ import React,{useState} from 'react';
 import styled from 'styled-components';
 import {OnClickTab} from './ingredients';
 
-const Tab=styled.div`
-  box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
+const Tab=styled.button`
+  box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.08);
   background-color: #fff;
   color: #4a4a4a;
   border-radius: 6px;
@@ -18,14 +18,16 @@ const Tab=styled.div`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  border:none;
+  font-size:1em;
   &:hover{
     cursor: pointer;
-    box-shadow: 0 0.5em 1em -0.125em rgba(25,25,25,.40), 0 0 0 1px rgba(25,25,25,.05);
+    box-shadow: 0 0.5em 1em -0.125em rgba(25,25,25,.40), 0 0 0 1px rgba(25,25,25,.2);
     color:lightblue;
   }
   &:focus{
     outline:none;
-    box-shadow: 0 0.5em 1em -0.125em rgba(26,156,232,.60), 0 0 0 1px rgba(26,156,232,.1);
+    box-shadow: 0 0.5em 1em -0.125em rgba(26,156,232,.60), 0 0 0 1px rgba(26,156,232,.2);
   }
   @media (max-width:768px) {
     width: 80vw;
@@ -46,15 +48,16 @@ const SubTitle=styled.p`
 const Image=styled.img`
   width: 100%;
   height: auto;
+  max-height:80%;
   margin: 0;
   padding: 0;
 `
-function MedicineTab({data}){
+function MedicineTab({data,handleFilter}){
   const handleOpenToggle=()=>setIsTabOpen(state=>!state);
   const[isTabOpen,setIsTabOpen]=useState(false);
   return(
     <>
-      {isTabOpen?<OnClickTab handleOpenToggle={handleOpenToggle} data={data}/>:null}
+      {isTabOpen?<OnClickTab handleOpenToggle={handleOpenToggle} data={data} handleFilter={handleFilter}/>:null}
       <Tab onClick={handleOpenToggle}  tabIndex="0">
         <Image src={data.img_link} alt={"zdjęcie "+data.name_pol}/>
         <Title>{data.name_pol}</Title>
