@@ -1,10 +1,10 @@
 {
-  "short_name": "Medicine App",
-  "name": "Medicine app For HackHeroes",
+  "short_name": "DrugApp",
+  "name": "DrugApp For HackHeroes",
   "icons": [
     {
-      "src": "";
-      "sizes":"" ;
+      "src": "",
+      "sizes":"" ,
       "type": "image/x-icon"
     },
     {

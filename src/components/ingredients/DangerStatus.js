@@ -19,6 +19,9 @@ const DangerStatusWrapper=styled.div`
     animation-duration: 0.25s;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   }
+  @media(max-width:768px){
+    width:90%;
+  }
 `
 const DrugName=styled.h2`
   font-size:3vh;
@@ -52,7 +55,7 @@ const content=()=>(<><DrugName>{drug}</DrugName><DrugDescription>{messege}</Drug
     
     return(
       <>
-        {importance===1?<YellowDanger>{content()}<BsExclamationTriangle/></YellowDanger>:importance===1?<RedDanger>{content()}<BsExclamationOctagonFill/></RedDanger>:<BlackDanger>{content()}<FaSkullCrossbones/></BlackDanger>}
+        {importance===1?<YellowDanger>{content()}<BsExclamationTriangle/></YellowDanger>:importance===2?<RedDanger>{content()}<BsExclamationOctagonFill/></RedDanger>:<BlackDanger>{content()}<FaSkullCrossbones/></BlackDanger>}
       </>
     );
 }

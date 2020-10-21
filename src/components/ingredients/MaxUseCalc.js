@@ -10,7 +10,6 @@ const CalcWrapper=styled.div`
   border-radius: 6px;
   padding: 1.25em;
   min-height: 20vh;
-  max-height: 30vh;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -62,13 +61,14 @@ const Daily=styled.p`
   border: 1px solid #4a4a4a;
   padding: 0.1em;
   border-radius: 4px;
+  margin:0.5em;
 `
 const Title=styled.h3`
   margin: 0.25em;
   padding: 0;
   font-size: 0.75em;
 `
-function MaxUseCalc({dosage}){
+function MaxUseCalc({dosage,ld50}){
 
   const[weight,setWeight]=useState("");
   const handleChange=(e)=>{
@@ -78,12 +78,14 @@ function MaxUseCalc({dosage}){
   return(
     <CalcWrapper>
 
-      {dosage>0?<><Title>Dzienne spożycie</Title>
+      {(dosage!==0||ld50!==0)?<><Title>Dzienne spożycie</Title>
       <AlignLeft>
         <CalcInput type="number" min="1" max="660" placeholder="Wpisz Swoją Wagę" value={weight} onChange={handleChange} maxlength="4" aria-label="Write your Weight to check how mcuch medicine you can use"/>
         <Disabled disabled>Kg</Disabled>
       </AlignLeft>
-      <Daily>Maksymalne dzienne spożycie:{weight*dosage>0?Math.round(weight*dosage*1000)/1000+"mg":null} </Daily></>:<p>Brak Danych</p>}
+      <Daily>{dosage===0?<>Brak Danych Odnośnie dziennego spożycia</>:<>Maksymalne dzienne spożycie:{weight*dosage>0?Math.round(weight*dosage*1000)/1000+"mg":null}</> }</Daily>
+      <Daily>{ld50===0?<>Brak Danych Odnośnie dawki śmiertelnej</>:<>Śmiertelne dzienne spożycie:{weight*ld50>0?Math.round(weight*ld50*1000)/1000+"mg":null}</> }</Daily>
+      </>:<p>Brak Danych</p>}
 
     </CalcWrapper>
   );
