@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/DrugApp/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/DrugApp/static/js/main.10b9608b.chunk.js",
+    "main.js.map": "/DrugApp/static/js/main.10b9608b.chunk.js.map",
+    "runtime-main.js": "/DrugApp/static/js/runtime-main.ced89ce8.js",
+    "runtime-main.js.map": "/DrugApp/static/js/runtime-main.ced89ce8.js.map",
+    "static/js/2.640d321e.chunk.js": "/DrugApp/static/js/2.640d321e.chunk.js",
+    "static/js/2.640d321e.chunk.js.map": "/DrugApp/static/js/2.640d321e.chunk.js.map",
+    "index.html": "/DrugApp/index.html",
+    "precache-manifest.08482d627f85728ea03a5e97f15cb676.js": "/DrugApp/precache-manifest.08482d627f85728ea03a5e97f15cb676.js",
+    "service-worker.js": "/DrugApp/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/DrugApp/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.640d321e.chunk.js.LICENSE.txt": "/DrugApp/static/js/2.640d321e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ced89ce8.js",
+    "static/js/2.640d321e.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.10b9608b.chunk.js"
+  ]
+}
