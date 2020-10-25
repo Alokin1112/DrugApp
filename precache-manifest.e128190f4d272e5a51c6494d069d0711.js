@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d0adcc4add685b8f79525967488acb6c",
+    "revision": "4c9d2cfd4f8294f0f544828fe0b75aa7",
     "url": "/DrugApp/index.html"
   },
   {
-    "revision": "28a3f4067adc1738b786",
+    "revision": "da8ddf607688244f062a",
     "url": "/DrugApp/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DrugApp/static/js/2.640d321e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "28a3f4067adc1738b786",
-    "url": "/DrugApp/static/js/main.10b9608b.chunk.js"
+    "revision": "da8ddf607688244f062a",
+    "url": "/DrugApp/static/js/main.655b1110.chunk.js"
   },
   {
     "revision": "bc902fffc0b30da838d6",
