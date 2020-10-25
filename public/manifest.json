@@ -3,19 +3,14 @@
   "name": "DrugApp For HackHeroes",
   "icons": [
     {
-      "src": "",
+      "src": "photos/Da256.png",
       "sizes":"" ,
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "photos/Da256png",
       "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "256x256"
     }
   ],
   "start_url": ".",

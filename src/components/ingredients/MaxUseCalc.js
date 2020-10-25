@@ -16,6 +16,7 @@ const CalcWrapper=styled.div`
   align-items: center;
   @media (max-width:768px) {
     width:100%;
+    margin:0.2em;
   }
 `
 const Disabled=styled.button`
@@ -47,6 +48,9 @@ const CalcInput=styled.input`
   color: #000;
   &:focus{
     color: #00B4CC;
+  }
+  @media(max-width:768px){
+    font-size:1em;
   }
 `
 const AlignLeft=styled.div`

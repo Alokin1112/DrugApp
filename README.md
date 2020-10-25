@@ -9,8 +9,10 @@ The Purpose of the application is to show users which drugs/medicine they can mi
 ## Support
 For Any Issue write an issue on github. We will try to response as fast as we can!
 ## Authors of The Project
+* Jolanta Cieszkowska - Team Leader
 * Dawid Szczepankowski - JavaScript & React
 * Filip Małecki-Tepicht -Backend & Database
 * Karol Muziński -Layout
+* Piotr Radzikowski - Database
 ## Contact To School
 [Maria Konopnicka High School in Legionowo](http://www.lokonopnicka.pl/)

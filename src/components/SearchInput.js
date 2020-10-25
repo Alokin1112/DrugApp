@@ -3,6 +3,19 @@ import styled from 'styled-components';
 import {FaSearch,FaBackspace} from 'react-icons/fa';
 import {DRUGS_TABLE} from './DRUGS_INFO';
 
+const SearchWrapper=styled.div`
+  margin: 2vh auto 3vh;
+  width: 65vw;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media(max-width:768px){
+    width: 90vw;
+    margin: 2vh auto;
+  }
+`
+
 const SearchTerm=styled.input`
   width: 100%;
   border: 3px solid #00B4CC;
@@ -31,7 +44,8 @@ const SearchButton=styled.button`
   justify-content: center;
   align-items: center;
   &:hover{
-    background-color: #000;
+    background-color: white;
+    color:#00B4CC;
   }
 `
 const SubmitButton=styled(SearchButton)`
@@ -63,12 +77,13 @@ const SuggestionItem=styled.li`
   font-family:'Roboto' sans-serif;
   padding-left:0.2em;
   background-color: #fff;
-  border:1px solid #000;
+  border:1px solid #786e6e;
+  border-radius:2px;
   width:100%;
   padding:0.15em;
   &:hover{
     cursor:pointer;
-    background-color: #55E7FF;
+    background-color: #e4e4e4;
   }
 `
 const DrugNames=DRUGS_TABLE.map(drug=>drug.name_pol);
@@ -88,16 +103,18 @@ function SearchInput({handleSearchSubmit,handleClearSearch}) {
     }
     return(
       <>
-        <SearchForm onSubmit={e=>{e.preventDefault();setSearch("")}}>
-        <InputWrapper>
-          <SearchTerm onChange={handleChange} value={search} tabIndex="2" aria-label="Search input to filter Medicines"/>
-          <SuggestionList>
-            {search!==""?suggestions.map(name=><SuggestionItem tabIndex="2" key={name}onClick={()=>{handleSearchSubmit(name);setSearch("")}}>{name}</SuggestionItem>):null}
-          </SuggestionList>
-        </InputWrapper>
-        <SubmitButton onClick={()=>handleSearchSubmit(search)} type="text"><FaSearch/></SubmitButton>
-        </SearchForm>
-        <SearchButton onClick={Clear} type="text"><FaBackspace/></SearchButton>
+        <SearchWrapper>
+          <SearchForm onSubmit={e=>{e.preventDefault();setSearch("")}}>
+          <InputWrapper>
+            <SearchTerm onChange={handleChange} value={search} tabIndex="0" aria-label="Search input to filter Medicines" placeholder="Wyszukaj Lek"/>
+            <SuggestionList>
+              {search!==""?suggestions.map(name=><SuggestionItem tabIndex="0" key={name} onClick={()=>{handleSearchSubmit(name);setSearch("")}}>{name}</SuggestionItem>):null}
+            </SuggestionList>
+          </InputWrapper>
+          <SubmitButton onClick={()=>handleSearchSubmit(search)} type="text" aria-label="Search Medicine"><FaSearch/></SubmitButton>
+          </SearchForm>
+          <SearchButton onClick={Clear} type="text" aria-label="Clear Searching"><FaBackspace/></SearchButton>
+        </SearchWrapper>
       </>
     );
 }

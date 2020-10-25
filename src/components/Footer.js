@@ -60,7 +60,7 @@ const NavUl=styled.ul`
   font-size: 16px;
   line-height: 2em;
   & a{
-    color: #999999;
+    color: #737373;
   }
 `
 const NavUlExtra=styled.ul`
@@ -68,7 +68,7 @@ const NavUlExtra=styled.ul`
   column-gap: 1.25em;
   font-size: 16px;
   & a{
-    color: #999999;
+    color: #737373;
   }
   @media(min-width: 40.375em){
     flex-grow:2;
@@ -77,7 +77,7 @@ const NavUlExtra=styled.ul`
 const Copyrights=styled.div`
   display: flex;
   flex-wrap: wrap;
-  color: #999;
+  color: #737373;
   font-size: 16px;
   @media(min-width:24.375em){
     margin-left: auto;
@@ -85,22 +85,22 @@ const Copyrights=styled.div`
 `
 const Description=styled.div`
   font-size: 14px;
-  color:#999;
+  color:#737373;
 `
 function Footer() {
   return(
     <Foot>
       <FCreated>
         <FLogo>DrugApp</FLogo>
-        <h2>Application created for Hackaton2020 competition by students of Maria Konopnicka high school in Legionowo(Poland).</h2>
+        <h2>Aplikacja stworzona na Konkurs Hackaton 2020 przez uczniów Liceum Ogólnokształcącego imienia Marii Konopnickiej w Legionowie.</h2>
       </FCreated>
       <FNav>
         <li>
-          <Title>Purpose of the application</Title>
-          <Description>The Purpose of the application is to show users which drugs/medicine they can mix and which mixed medicines can couse a health problems. I hope you enjoy this app!</Description>
+          <Title>Cel Aplikacji</Title>
+          <Description>Zadaniem Aplikacji jest ukazanie negatywnych skutków mieszania danych substancji występujących w lekach, w celu ostrzeżenia i uniknięcia uszczerbków na zdrowiu</Description>
         </li>
         <li>
-          <Title>Things used to Create Project</Title>
+          <Title>Narzędzia użyte w Projekcie</Title>
           <NavUlExtra>
             <li>
               <a href="https://reactjs.org/">React</a>
@@ -114,32 +114,38 @@ function Footer() {
           </NavUlExtra>
         </li>
         <li>
-          <Title>Support</Title>
-          <Description> For any Issues write an issue on GitHub. We will try to response as fast as we can!</Description>
+          <Title>Wsparcie i Problemy</Title>
+          <Description>W przypadku jakichkolwiek problemów prosimy o kontakt na repozytorium projektu. Zrobimy wszystko by jak najszybciej naprawić zainstniały problem.</Description>
         </li>
         <li>
           <Title>
-            Authors of The Project
+            Autorzy Projektu
           </Title>
           <Description>
             <ul>
               <li>
+                Jolanta Cieszkowska - Koordynator Zespołu
+              </li>
+              <li>
                 Dawid Szczepankowski - JavaScript & React
               </li>
               <li>
-                Filip Małecki-Tepicht - Backend & Database
+                Filip Małecki-Tepicht - Backend & Bazy Danych
               </li>
               <li>
                 Karol Muziński - HTML & CSS
+              </li>
+              <li>
+                Piotr Radzikowski - Bazy Danych
               </li>
             </ul>
           </Description>
         </li>
         <li>
-          <Title>Contact to School</Title>
+          <Title>Kontakt</Title>
           <NavUl>
             <li>
-              <a href="http://www.lokonopnicka.pl/">Maria Konopnicka High School in Legionowo</a>
+              <a href="http://www.lokonopnicka.pl/">Liceum Ogólnokształcące imienia Marii Konopnickiej w Legionowie</a>
             </li>
           </NavUl>
         </li>

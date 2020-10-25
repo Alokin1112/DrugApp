@@ -38,7 +38,7 @@ function Notification(){
         <>
        {isOpen ? <Note>
             Uwaga!!! Aplikacja nie jest stworzona przez Lekarzy. Skonsultuj się z lekarzem/farmaceutą przed skorzystaniem z leku!
-            <Close onClick={handleClose}>X</Close>
+            <Close onClick={handleClose} aria-label="Close Notification">X</Close>
         </Note>:null}
         </>
     );

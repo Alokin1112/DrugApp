@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {OnClickTab} from './ingredients';
 
 const Tab=styled.button`
-  box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.08);
+  box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.15), 0 0 0 1px rgba(10,10,10,.12);
   background-color: #fff;
   color: #4a4a4a;
   border-radius: 6px;
@@ -22,8 +22,8 @@ const Tab=styled.button`
   font-size:1em;
   &:hover{
     cursor: pointer;
-    box-shadow: 0 0.5em 1em -0.125em rgba(25,25,25,.40), 0 0 0 1px rgba(25,25,25,.2);
-    color:lightblue;
+    box-shadow: 0 0.5em 1em -0.125em rgba(25,25,25,.44), 0 0 0 1px rgba(25,25,25,.25);
+    color:#00B4CC;
   }
   &:focus{
     outline:none;
@@ -32,6 +32,7 @@ const Tab=styled.button`
   @media (max-width:768px) {
     width: 80vw;
     margin:1em auto;
+    height:30vh;
   }
 `
 const Title=styled.p`
@@ -43,7 +44,7 @@ const SubTitle=styled.p`
   font-size: 0.5em;
   margin:0;
   font-family: 'Roboto';
-  color: grey;
+  color: #786e6e;
 `
 const Image=styled.img`
   width: 100%;
@@ -58,8 +59,8 @@ function MedicineTab({data,handleFilter}){
   return(
     <>
       {isTabOpen?<OnClickTab handleOpenToggle={handleOpenToggle} data={data} handleFilter={handleFilter}/>:null}
-      <Tab onClick={handleOpenToggle}  tabIndex="0">
-        <Image src={data.img_link} alt={"zdjęcie "+data.name_pol}/>
+      <Tab onClick={handleOpenToggle}  tabIndex="0" aria-label={"Opens "+data.name_pol+" informations"}>
+        <Image src={data.img_link} alt={"zdjęcie "+data.name_pol} rel="preconnect"/>
         <Title>{data.name_pol}</Title>
         <SubTitle>{data.name_lat}</SubTitle>
       </Tab>

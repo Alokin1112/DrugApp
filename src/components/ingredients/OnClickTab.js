@@ -60,7 +60,7 @@ const Title=styled.h2`
 const SubTitle=styled.h5`
   padding: 0;
   margin: 0;
-  color:lightgrey;
+  color:#786e6e;
 `
 const ApplicationWrapper=styled.div`
   display: flex;
@@ -74,7 +74,7 @@ const ApplicationWrapper=styled.div`
   }
 `
 const Application=styled.a`
-  background: radial-gradient(circle, rgba(11,106,156,1) 0%, rgba(0,224,255,1) 100%);
+  background: linear-gradient(to bottom right, #0092bb, #00ffff);
   color: #fff;
   font-size: 0.75em;
   border-radius: 6px;
