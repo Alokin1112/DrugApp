@@ -1,18 +1,6 @@
 {
   "short_name": "DrugApp",
   "name": "DrugApp For HackHeroes",
-  "icons": [
-    {
-      "src": "photos/Da256.png",
-      "sizes":"" ,
-      "type": "image/x-icon"
-    },
-    {
-      "src": "photos/Da256png",
-      "type": "image/png",
-      "sizes": "256x256"
-    }
-  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
